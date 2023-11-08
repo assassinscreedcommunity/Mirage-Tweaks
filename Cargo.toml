@@ -1,26 +1,19 @@
 [package]
 name = "mirage-tweaks"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 rust-version = "1.65"
 
-[dependencies.windows]
-version = "0.51"
-features = [
-    "Win32_Foundation",
-    "Win32_System_ProcessStatus",
-    "Win32_System_Threading",
-    "Win32_System_Diagnostics_Debug",
-]
-
-[dependencies.eframe]
-version = "0.23"
-features = ["glow"]
-default-features = false
-
 [dependencies]
-rfd = "0.12"
-anyhow = "1.0"
+anyhow = { version = "1.0" }
+eframe = { version = "0.23", features = ["glow"], default-features = false }
+log = { version = "0.4" }
+once_cell = { version = "1.18" }
+regex = { version = "1.10" }
+rfd = { version = "0.12" }
+serde = { version = "1.0", features = ["derive"] }
+toml = { version = "0.8" }
+windows = { version = "0.52", features = ["Win32_Foundation", "Win32_System_Console", "Win32_System_Diagnostics_Debug", "Win32_System_Diagnostics_ToolHelp", "Win32_System_Memory", "Win32_System_Threading"] }
 
 [build-dependencies]
-winres = "0.1"
+winres = { version = "0.1" }
